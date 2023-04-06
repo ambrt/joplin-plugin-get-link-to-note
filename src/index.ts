@@ -10,7 +10,7 @@ joplin.plugins.register({
 			execute: async () => {
 
 				const note = await joplin.workspace.selectedNote();
-				navigator.clipboard.writeText(`[${note.title}](:/${note.id})`)
+				joplin.clipboard.writeText(`[${note.title}](:/${note.id})`)
 			}
 		})
 		await joplin.views.menuItems.create('getActiveNoteLinkMenu', 'getActiveNoteLink', MenuItemLocation.EditorContextMenu);
